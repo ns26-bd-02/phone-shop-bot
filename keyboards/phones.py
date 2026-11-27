@@ -12,3 +12,17 @@ def get_brand_keyboard(brands: list[str]) -> InlineKeyboardMarkup:
         )
 
     return InlineKeyboardMarkup(inline_keyboard=buttons)
+
+
+def get_phones_keyboard(phones: list[dict]) -> InlineKeyboardMarkup:
+    buttons = []
+    for phone in phones:
+        buttons.append(
+            [
+                InlineKeyboardButton(
+                    text=phone["model"], callback_data=f"phone:{phone['id']}"
+                )
+            ]
+        )
+
+    return InlineKeyboardMarkup(inline_keyboard=buttons)

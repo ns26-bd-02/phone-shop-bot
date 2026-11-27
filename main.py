@@ -1,7 +1,11 @@
 from telegram.ext import Updater
 
 from config import settings
-from handlers import add_command_handlers, add_message_handlers
+from handlers import (
+    add_command_handlers,
+    add_message_handlers,
+    add_callback_query_handlers,
+)
 
 
 def main():
@@ -9,6 +13,7 @@ def main():
 
     add_command_handlers(updater.dispatcher)
     add_message_handlers(updater.dispatcher)
+    add_callback_query_handlers(updater.dispatcher)
 
     print("Bot is running...")
     updater.start_polling()
