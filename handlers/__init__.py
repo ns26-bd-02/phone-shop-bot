@@ -7,7 +7,7 @@ from telegram.ext import (
 )
 
 from .start import handle_start
-from .phones import handle_brand
+from .phones import handle_brand, handle_phone
 
 
 def add_command_handlers(dispatcher: Dispatcher) -> None:
@@ -23,6 +23,9 @@ def add_message_handlers(dispatcher: Dispatcher) -> None:
 def add_callback_query_handlers(dispatcher: Dispatcher) -> None:
     dispatcher.add_handler(
         handler=CallbackQueryHandler(callback=handle_brand, pattern="brand:")
+    )
+    dispatcher.add_handler(
+        handler=CallbackQueryHandler(callback=handle_phone, pattern="phone:")
     )
 
 

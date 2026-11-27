@@ -21,3 +21,11 @@ def get_phones_by_brand(brand: str) -> list[dict]:
             result.append(phone)
 
     return result
+
+
+def get_phones_by_id(phone_id: int) -> dict:
+    phones: list[dict] = read_data("phones.json")
+
+    for phone in phones:
+        if phone["id"] == phone_id:
+            return phone
