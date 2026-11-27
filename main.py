@@ -1,5 +1,15 @@
+from telegram.ext import Updater
+
+from config import settings
+
+
 def main():
-    print("Hello from phone-shop-bot!")
+    updater = Updater(settings.TOKEN)
+    dispatcher = updater.dispatcher
+
+    updater.start_polling()
+    updater.idle()
+    print("Bot is running...")
 
 
 if __name__ == "__main__":
