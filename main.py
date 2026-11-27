@@ -7,9 +7,9 @@ def main():
     updater = Updater(settings.TOKEN)
     dispatcher = updater.dispatcher
 
+    print("Bot is running...")
     updater.start_polling()
     updater.idle()
-    print("Bot is running...")
 
 
 if __name__ == "__main__":
