@@ -6,7 +6,4 @@ def get_brand_keyboard(brands: list[str]) -> ReplyKeyboardMarkup:
     for brand in brands:
         buttons.append([KeyboardButton(brand)])
 
-    return ReplyKeyboardMarkup(
-        keyboard=buttons,
-        resize_keyboard=True
-    )
+    return ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
